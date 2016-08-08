@@ -6,6 +6,8 @@ import Util.Pair;
  * Created by XJ on 2016/8/5.
  */
 public class Sampling {
+	
+	//sampling x and topic for words
     protected static void sampleXZ(int index, SModel model, int category, int[][] xmirror, int[][] zmirror) {
         SDocument doc = model.documents[index];
         int len = doc.contents.size();
@@ -49,7 +51,7 @@ public class Sampling {
             }
         }
     }
-
+//sampling category label for doucments
     protected static double sampleC(int index, SModel model, int c, int[] xmirror, int[] zmirror, int[] wmirror) {
 
         double re;

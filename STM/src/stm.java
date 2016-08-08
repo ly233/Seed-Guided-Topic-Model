@@ -8,11 +8,11 @@ public class stm {
         SModel model = new SModel();
        
         //parameters need to be specified
-        model.cateNum = 10; // the number of category
-        model.testSetPath = "\\rcv_filtered\\test"; // test set path
-        model.trainSetPath = ".\rcv_filtered\\train";
-        model.catalogPath = ".\\catalog\\rcv"; // catalog file path
-        model.seedwordPath = ".\\seedword\\SD\\rcv"; //seed word  file path
+        model.cateNum = 2; // the number of category
+        model.testSetPath = "D:\\dataset\\20news_bydate_reform\\test"; // test set path
+        model.trainSetPath = "D:\\dataset\\20news_bydate_reform\\train";
+        model.catalogPath = ".\\catalog\\politics-religion"; // catalog file path
+        model.seedwordPath = ".\\seedword\\SD\\politics-religion"; //seed word  file path
 
         //parameters can use default value
         model.luceneIndexPath = ".\\luceneIndex";

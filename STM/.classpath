@@ -2,15 +2,15 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/codecs"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/common"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/core"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/queries"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/queryparser"/>
-	<classpathentry kind="lib" path="D:/workspace/STM/lib/codecs/lucene-codecs-5.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/STM/lib/common/lucene-analyzers-common-5.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/STM/lib/core/lucene-core-5.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/workspace/STM/lib/queries/lucene-queries-5.2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lucene-codecs-5.2.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lucene-analyzers-common-5.2.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lucene-core-5.2.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lucene-queries-5.2.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lucene-queryparser-5.2.1"/>
 	<classpathentry kind="lib" path="D:/workspace/STM/lib/queryparser/lucene-queryparser-5.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/STM/lib/queries/lucene-queries-5.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/STM/lib/core/lucene-core-5.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/STM/lib/common/lucene-analyzers-common-5.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/STM/lib/codecs/lucene-codecs-5.2.1.jar"/>
 	<classpathentry kind="output" path="out/production/STM"/>
 </classpath>

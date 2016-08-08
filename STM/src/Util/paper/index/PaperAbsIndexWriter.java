@@ -44,12 +44,12 @@ public class PaperAbsIndexWriter {
      * @param indexPath
      */
     public static int startIndex(String absPath, String indexPath) {
-      return   startIndex(absPath, indexPath, 0, true);
+        return startIndex(absPath, indexPath, 0, true);
     }
 
 
     public static int startIndex(String absPath, String indexPath, int cate, boolean createNew) {
-      return   startIndex(absPath, indexPath, cate, createNew, false);
+        return startIndex(absPath, indexPath, cate, createNew, false);
     }
 
     public static int startIndex(String absPath, String indexPath, int cate, boolean createNew, boolean check) {
@@ -57,7 +57,6 @@ public class PaperAbsIndexWriter {
         try {
             List<String[]> paperList = loadAbs(absPath, cate);
             Directory dir = FSDirectory.open(Paths.get(indexPath));
-            //禁用了stopword。
             // BufferedReader stopwordsReader = new BufferedReader(new FileReader("D:\\dataSet\\stopwords-1.txt"));
             Analyzer analyzer =
                     // new StandardAnalyzer(stopwordsReader);
@@ -171,12 +170,11 @@ public class PaperAbsIndexWriter {
 
     }
 
-    public static int startIndex_random(String absPath, String indexPath, int cate, boolean createNew, boolean check,int num){
+    public static int startIndex_random(String absPath, String indexPath, int cate, boolean createNew, boolean check, int num) {
         int beginId = 0;
         try {
-            List<String[]> paperList = loadAbs_randomSelect(absPath, cate,num);
+            List<String[]> paperList = loadAbs_randomSelect(absPath, cate, num);
             Directory dir = FSDirectory.open(Paths.get(indexPath));
-            //禁用了stopword。
             // BufferedReader stopwordsReader = new BufferedReader(new FileReader("D:\\dataSet\\stopwords-1.txt"));
             Analyzer analyzer =
                     // new StandardAnalyzer(stopwordsReader);
@@ -239,7 +237,7 @@ public class PaperAbsIndexWriter {
                         record[1] == null ? "null" : record[1]);
                 checkField.setIntValue(check == true ? 1 : 0);
 
-                 if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
+                if (writer.getConfig().getOpenMode() == OpenMode.CREATE) {
                     writer.addDocument(doc);
                 } else {
                     writer.addDocument(doc);
@@ -276,22 +274,22 @@ public class PaperAbsIndexWriter {
         File file = new File(absPath);
 
         if (!file.exists() || !file.isDirectory()) {
-            throw new IllegalArgumentException(
-                    "absPath must be a folder path");
+               throw new IllegalArgumentException(
+               "absPath must be a folder path");
         }
         File[] txtFiles = file.listFiles();
 
-        for (File txtFile : txtFiles) {
-            String title = txtFile.getName();
-            // title = title.substring(0,
-            //    title.length()-SUFFIX.length());
-            String abs = IOUtil.getFileText(txtFile);
-            String[] pair = new String[3];
-            pair[0] = title;
-            pair[1] = abs;
-            pair[2] = String.valueOf(cate);
-            list.add(pair);
-        }
+            for (File txtFile : txtFiles) {
+                String title = txtFile.getName();
+                // title = title.substring(0,
+                //    title.length()-SUFFIX.length());
+                String abs = IOUtil.getFileText(txtFile);
+                String[] pair = new String[3];
+                pair[0] = title;
+                pair[1] = abs;
+                pair[2] = String.valueOf(cate);
+                list.add(pair);
+            }
 
         return list;
     }
@@ -309,17 +307,17 @@ public class PaperAbsIndexWriter {
         }
         File[] txtFiles = file.listFiles();
         len = txtFiles.length;
-        if (num >len||num==0)
+        if (num > len || num == 0)
             return loadAbs(absPath, cate);
 
         TreeSet<Integer> set = new TreeSet<>();
         while (set.size() < num)
-            set.add((int) (Math.random() *len));
+            set.add((int) (Math.random() * len));
 
         File f;
-        for(Integer i:set){
-            f=txtFiles[i];
-            String abs=IOUtil.getFileText(f);
+        for (Integer i : set) {
+            f = txtFiles[i];
+            String abs = IOUtil.getFileText(f);
             String title = f.getName();
             String[] pair = new String[3];
             pair[0] = title;
